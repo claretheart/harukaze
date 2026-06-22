@@ -93,6 +93,16 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   padding: 40px 24px 8px;
 }
+.hero-subcopy {
+  max-width: 620px;
+  margin: 0 auto 26px;
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 2;
+  color: var(--brown);
+}
+@media (max-width: 600px) { .hero-subcopy { font-size: 1.04rem; } }
+
 .hero-lead {
   margin: 0 0 18px;
   color: var(--brown-soft);
@@ -250,12 +260,32 @@ a { color: inherit; text-decoration: none; }
 .work-thumb-cafe   { background: var(--wakakusa-soft); }
 .work-thumb-flower { background: var(--sakura-soft); }
 .work-thumb-clinic { background: #EEF1EA; }
-.work-card h3 { margin: 22px 0 6px; font-size: 1.1rem; }
-.work-status {
+.work-card h3 { margin: 22px 0 10px; font-size: 1.1rem; }
+.work-proposal {
   margin: 0;
+  padding: 0 22px;
   color: var(--brown-soft);
-  font-size: 0.86rem;
+  font-size: 0.94rem;
+  line-height: 1.8;
 }
+
+/* ===== AIへの考え方 ===== */
+.section-philosophy {
+  background: var(--wakakusa-soft);
+  text-align: center;
+}
+.philosophy-lead {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 28px;
+}
+.philosophy-text {
+  font-size: 1.05rem;
+  line-height: 2.1;
+  margin: 0 0 18px;
+}
+.philosophy-text.soft { color: var(--brown-soft); margin-bottom: 0; }
 
 /* ===== お問い合わせ ===== */
 .section-contact {
