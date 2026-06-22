@@ -40,6 +40,21 @@ img { max-width: 100%; display: block; }
 
 a { color: inherit; text-decoration: none; }
 
+/* 日本語を意味のまとまりで折り返す（単語の途中で切れないように） */
+.phrase { display: inline-block; }
+
+/* 中央寄せの短文は行の長さを自動でバランス調整 */
+.section-sub,
+.hero-lead,
+.contact-text,
+.worry-foot,
+.philosophy-text,
+.lead-text,
+.body-text,
+.work-proposal {
+  text-wrap: balance;
+}
+
 .container {
   width: 100%;
   max-width: var(--maxw);
