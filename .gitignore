@@ -15,3 +15,6 @@ tmp/
 # Env / secrets
 .env
 .env.*
+
+# Vercel
+.vercel
