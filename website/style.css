@@ -1,0 +1,321 @@
+/* ===========================================================
+   harukaze — TOP page
+   優先順位: 安心感 > 親しみやすさ > 京都らしさ > 温かみ > シンプルさ
+   =========================================================== */
+
+:root {
+  --bg:        #FAF7F2; /* 背景 */
+  --sakura:    #E7C9C9; /* 桜色 */
+  --wakakusa:  #B8C9A3; /* 若草色 */
+  --brown:     #4A403A; /* ダークブラウン（文字） */
+
+  --sakura-soft:   #F3E4E4;
+  --wakakusa-soft: #E2EAD6;
+  --brown-soft:    #7A6F66;
+
+  --card:      #FFFFFF;
+  --shadow:    0 8px 30px rgba(74, 64, 58, 0.07);
+  --radius:    18px;
+
+  --maxw:      1040px;
+  --maxw-narrow: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  color: var(--brown);
+  background: var(--bg);
+  line-height: 1.9;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container.narrow { max-width: var(--maxw-narrow); }
+
+.pc-only { display: inline; }
+@media (max-width: 600px) { .pc-only { display: none; } }
+
+/* ===== ヘッダー ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(74, 64, 58, 0.06);
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-logo { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.brand-name { font-weight: 700; font-size: 1.15rem; letter-spacing: 0.04em; }
+
+.nav { display: flex; align-items: center; gap: 22px; }
+.nav a { font-size: 0.92rem; color: var(--brown-soft); transition: color 0.2s ease; }
+.nav a:hover { color: var(--brown); }
+.nav-cta {
+  background: var(--sakura);
+  color: var(--brown) !important;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.nav-cta:hover { background: #dfb9b9; }
+
+@media (max-width: 720px) {
+  .nav { gap: 14px; }
+  .nav a:not(.nav-cta) { display: none; }
+}
+
+/* ===== ヒーロー ===== */
+.hero { position: relative; }
+.hero-img { width: 100%; height: auto; }
+
+.hero-cta {
+  text-align: center;
+  padding: 40px 24px 8px;
+}
+.hero-lead {
+  margin: 0 0 18px;
+  color: var(--brown-soft);
+  font-size: 1rem;
+}
+
+/* ===== 共通セクション ===== */
+.section { padding: 88px 0; }
+@media (max-width: 600px) { .section { padding: 60px 0; } }
+
+.section-eyebrow {
+  text-align: center;
+  color: var(--wakakusa);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  margin: 0 0 24px;
+}
+.section-title {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0 0 14px;
+  letter-spacing: 0.06em;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 18px auto 0;
+  border-radius: 3px;
+  background: var(--sakura);
+}
+.section-sub {
+  text-align: center;
+  color: var(--brown-soft);
+  margin: 0 0 48px;
+  font-size: 0.98rem;
+}
+
+/* ===== はじめに ===== */
+.section-about { background: var(--bg); }
+.section-about .lead-text {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 2.1;
+  margin: 0 0 36px;
+}
+.section-about .body-text {
+  text-align: center;
+  font-size: 1.02rem;
+  margin: 0 0 22px;
+}
+.section-about .body-text.soft { color: var(--brown-soft); }
+
+/* ===== お悩み ===== */
+.section-worries { background: var(--wakakusa-soft); }
+.worry-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.worry-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px 26px;
+  box-shadow: var(--shadow);
+  font-size: 1.02rem;
+  position: relative;
+  padding-left: 56px;
+}
+.worry-card::before {
+  content: "🌸";
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+}
+.worry-foot {
+  text-align: center;
+  margin: 44px 0 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ===== できること ===== */
+.section-services { background: var(--bg); }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 860px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .service-grid { grid-template-columns: 1fr; } }
+
+.service-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 36px 26px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(74, 64, 58, 0.1);
+}
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sakura-soft);
+  font-size: 1.7rem;
+  margin: 0 auto 18px;
+  line-height: 1;
+  text-align: center;
+}
+.service-card h3 { margin: 0 0 10px; font-size: 1.1rem; font-weight: 700; }
+.service-card p { margin: 0; color: var(--brown-soft); font-size: 0.94rem; line-height: 1.8; }
+
+/* ===== 事例 ===== */
+.section-works { background: var(--sakura-soft); }
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 700px) { .work-grid { grid-template-columns: 1fr; } }
+
+.work-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding-bottom: 26px;
+}
+.work-thumb {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+.work-thumb-cafe   { background: var(--wakakusa-soft); }
+.work-thumb-flower { background: var(--sakura-soft); }
+.work-thumb-clinic { background: #EEF1EA; }
+.work-card h3 { margin: 22px 0 6px; font-size: 1.1rem; }
+.work-status {
+  margin: 0;
+  color: var(--brown-soft);
+  font-size: 0.86rem;
+}
+
+/* ===== お問い合わせ ===== */
+.section-contact {
+  background: var(--bg);
+  text-align: center;
+}
+.contact-text {
+  font-size: 1.05rem;
+  margin: 0 0 40px;
+  line-height: 2.1;
+}
+.contact-note {
+  margin: 18px 0 0;
+  color: var(--brown-soft);
+  font-size: 0.84rem;
+}
+
+/* ===== ボタン ===== */
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 15px 38px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-primary {
+  background: var(--sakura);
+  color: var(--brown);
+  box-shadow: 0 6px 18px rgba(231, 201, 201, 0.6);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #e0bcbc;
+}
+.btn-large { padding: 18px 52px; font-size: 1.08rem; }
+
+/* LINE相談ボタン（世界観に合わせ桜色ベース） */
+.btn-line {
+  background: var(--sakura);
+  color: var(--brown);
+  box-shadow: 0 6px 18px rgba(231, 201, 201, 0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-line:hover {
+  transform: translateY(-2px);
+  background: #e0bcbc;
+}
+.btn-icon { font-size: 1.2em; line-height: 1; }
+
+/* ===== フッター ===== */
+.site-footer {
+  text-align: center;
+  padding: 56px 24px 48px;
+  background: var(--brown);
+  color: #F4EFE9;
+}
+.footer-logo { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 18px; }
+.footer-copy { margin: 0 0 10px; font-size: 1.05rem; letter-spacing: 0.08em; }
+.footer-small { margin: 0; font-size: 0.8rem; opacity: 0.7; }
