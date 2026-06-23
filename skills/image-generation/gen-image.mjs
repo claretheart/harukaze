@@ -2,15 +2,15 @@
 /**
  * harukaze 画像生成スクリプト（OpenAI gpt-image-1）
  *
- * 使い方:
- *   node scripts/gen-image.mjs "プロンプト" [--out 出力パス] [--size サイズ] [--quality 品質]
+ * 使い方（リポジトリ直下 harukaze-os/ で実行）:
+ *   node skills/image-generation/gen-image.mjs "プロンプト" [--out 出力パス] [--size サイズ] [--quality 品質]
  *
  * 例:
- *   node scripts/gen-image.mjs "水彩風の京都町家カフェの外観、和モダン、柔らかい光"
- *   node scripts/gen-image.mjs "桜の水彩イラスト" --out assets/illustrations/sakura.png --size 1024x1024
+ *   node skills/image-generation/gen-image.mjs "水彩風の京都町家カフェの外観、和モダン、柔らかい光"
+ *   node skills/image-generation/gen-image.mjs "桜の水彩イラスト" --out resources/illustrations/sakura.png --size 1024x1024
  *
  * オプション:
- *   --out      出力ファイルパス（既定: assets/images/gen-<日時>.png）
+ *   --out      出力ファイルパス（既定: resources/photos/gen-<日時>.png）
  *   --size     1024x1024 / 1536x1024(横長) / 1024x1536(縦長) / auto（既定: 1536x1024）
  *   --quality  low / medium / high / auto（既定: high）
  *
@@ -23,7 +23,7 @@ import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
+const ROOT = resolve(__dirname, "../..");  // skills/image-generation/ から見たリポジトリ直下
 
 // --- .env を簡易ロード（依存なし） ---
 function loadEnv() {
@@ -63,7 +63,7 @@ if (!apiKey) {
 const size = flag("size", "1536x1024");
 const quality = flag("quality", "high");
 const ts = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
-const outRel = flag("out", `assets/images/gen-${ts}.png`);
+const outRel = flag("out", `resources/photos/gen-${ts}.png`);
 const outPath = resolve(ROOT, outRel);
 
 console.log(`🎨 生成中… (size=${size}, quality=${quality})`);
