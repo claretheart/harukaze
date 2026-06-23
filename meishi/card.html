@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>harukaze 名刺</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#FAF7F2; --sakura:#E7C9C9; --wakakusa:#B8C9A3; --brown:#4A403A; --brown-soft:#8A7E73;
+      --mincho:"Shippori Mincho", serif;
+      --maru:"Zen Maru Gothic", sans-serif;
+    }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    body{
+      font-family:var(--maru); background:#e9e4dc; color:var(--brown);
+      display:flex; flex-direction:column; align-items:center; gap:11mm; padding:14mm 8mm;
+    }
+    .hint{ font-size:12px; color:#6b6259; text-align:center; max-width:91mm; line-height:1.8; }
+    .hint code{ background:#fff; padding:1px 5px; border-radius:4px; }
+
+    /* 名刺サイズ：91mm × 55mm */
+    .card{
+      width:91mm; height:55mm; background:var(--bg);
+      position:relative; overflow:hidden;
+      box-shadow:0 8px 30px rgba(74,64,58,.16);
+    }
+    /* 水彩ウォッシュ（にじみ） */
+    .wash{ position:absolute; border-radius:50%; filter:blur(26px); pointer-events:none; }
+    .wash-s{ background:var(--sakura); }
+    .wash-w{ background:var(--wakakusa); }
+
+    /* ===== 表 ===== */
+    .front{ padding:7mm 7.5mm 6.5mm; display:flex; flex-direction:column; position:relative; z-index:1; }
+    .front .brandrow{ display:flex; align-items:center; gap:2.8mm; }
+    .front .logo{ width:9.5mm; height:9.5mm; border-radius:50%; object-fit:cover; }
+    .front .wordmark{ font-family:var(--maru); font-size:14px; font-weight:500; letter-spacing:.22em; }
+
+    .front .catch{
+      margin-top:6mm; font-family:var(--mincho); font-weight:600;
+      font-size:20px; letter-spacing:.14em; line-height:1.3;
+    }
+    .front .catch .accent{ color:#D29A9A; }
+    .front .tagline{
+      margin-top:2.5mm; font-size:8px; color:var(--brown-soft); letter-spacing:.06em; font-weight:400;
+    }
+
+    .front .footer{ margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between; gap:5mm; }
+    .front .person .name{ font-size:12.5px; font-weight:700; letter-spacing:.06em; }
+    .front .person .title{ font-size:7.5px; color:var(--brown-soft); margin-top:1mm; letter-spacing:.04em; }
+    .front .contacts{ margin-top:3mm; font-size:7.5px; line-height:2; }
+    .front .contacts .lbl{
+      display:inline-block; width:8mm; color:var(--wakakusa); font-weight:700; letter-spacing:.05em;
+    }
+    .front .qr{ text-align:center; }
+    .front .qr .qrbox{ padding:1.4mm; background:#fff; border-radius:2mm; box-shadow:0 2px 8px rgba(74,64,58,.08); }
+    .front .qr img{ width:14mm; height:14mm; display:block; }
+    .front .qr span{ font-size:6px; color:var(--brown-soft); display:block; margin-top:1mm; letter-spacing:.08em; }
+
+    /* ===== 裏 ===== */
+    .back{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; z-index:1; }
+    .back .b-catch{ font-family:var(--mincho); font-weight:600; font-size:24px; letter-spacing:.18em; }
+    .back .b-catch .accent{ color:#D29A9A; }
+    .back .b-word{ margin-top:3.5mm; font-size:9px; letter-spacing:.5em; color:var(--brown-soft); font-weight:400; }
+    .back .b-line{ width:12mm; height:1px; background:var(--sakura); margin:4mm auto 0; }
+    .back .b-services{ margin-top:4mm; font-size:7px; color:var(--brown-soft); letter-spacing:.1em; }
+
+    @media print{
+      body{ background:#fff; padding:0; gap:0; }
+      .hint{ display:none; }
+      .card{ box-shadow:none; page-break-after:always; }
+      @page{ size:91mm 55mm; margin:0; }
+    }
+  </style>
+</head>
+<body>
+
+  <p class="hint">
+    名刺プレビュー（91×55mm）。印刷／PDF化は <code>⌘P</code> から（用紙サイズ 91×55mm／余白なし）。<br />
+    〔　〕はあなたの情報に差し替えます。
+  </p>
+
+  <!-- ===== 表面 ===== -->
+  <div class="card front">
+    <span class="wash wash-s" style="width:34mm;height:34mm;top:-14mm;right:-12mm;opacity:.4;"></span>
+    <span class="wash wash-w" style="width:26mm;height:26mm;bottom:-13mm;left:-10mm;opacity:.28;"></span>
+
+    <div class="brandrow">
+      <img class="logo" src="../assets/logo/harukaze-logo.png" alt="harukaze" />
+      <span class="wordmark">harukaze</span>
+    </div>
+
+    <p class="catch">京都に春<span class="accent">風</span>を。</p>
+    <p class="tagline">小さな挑戦に、そっと寄り添うデジタルの右腕。</p>
+
+    <div class="footer">
+      <div class="person">
+        <div class="name">高岸 祐太</div>
+        <div class="title">地域のデジタル伴走者</div>
+        <div class="contacts">
+          <div><span class="lbl">Web</span>harukaze-eta.vercel.app</div>
+          <div><span class="lbl">LINE</span>QRから友だち追加</div>
+          <div><span class="lbl">Mail</span>kohakuno1122@gmail.com</div>
+        </div>
+      </div>
+      <div class="qr">
+        <div class="qrbox"><img src="../assets/icons/qr-site.png" alt="サイトQR" /></div>
+        <span>SITE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 裏面 ===== -->
+  <div class="card back">
+    <span class="wash wash-s" style="width:30mm;height:30mm;top:-12mm;left:-10mm;opacity:.32;"></span>
+    <span class="wash wash-w" style="width:28mm;height:28mm;bottom:-12mm;right:-10mm;opacity:.26;"></span>
+
+    <p class="b-catch">京都に春<span class="accent">風</span>を。</p>
+    <p class="b-word">h a r u k a z e</p>
+    <div class="b-line"></div>
+    <p class="b-services">ホームページ　PR動画　SNS　LINE導線　伴走</p>
+  </div>
+
+</body>
+</html>
