@@ -133,6 +133,7 @@ archive/    役目を終えたもの
 ```
 
 各フォルダの `README.md` に詳しい役割を記載しています。
+現在地と進む道は [`dashboard.md`](dashboard.md)、業種ロードマップは [`resources/industry-list.md`](resources/industry-list.md)。
 
 - 公開サイト: https://harukaze-eta.vercel.app
 - LINE相談: https://lin.ee/qyhQEqS

@@ -3,6 +3,7 @@
 複数プロジェクトで使い回す素材の置き場。
 
 ## 中身
+- `industry-list.md` … 対象業種リスト（事例ロードマップ）
 - `photos/` … 写真素材（実写・AI生成）。`photos/cafe/` に珈琲 春灯の原本など
 - `illustrations/` … イラスト・水彩素材（名刺背景 `card-bg.png` など）
 - `icons/` … アイコン・QR（`qr-site.png` など）
