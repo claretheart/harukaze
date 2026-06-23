@@ -1,16 +1,27 @@
 # templates/ — 再利用する雛形
 
-ゼロから作らないための「出発点」。新規制作はここをコピーして始めます。
+ゼロから作らないための「出発点」。**業種を入れて `〔 〕` を埋めるだけ**で使い回せます。
 
-## 入れるもの（例）
-- `case-page/` … 事例ページの雛形（Hero / 想い / 商品 / ギャラリー / 店舗情報 / CTA）
-- `note-article/` … note記事の雛形
-- `sns-post/` … SNS投稿の雛形
+## テンプレート一覧
+
+| ファイル | 用途 |
+|---------|------|
+| `brand-site-template.md` | 業種別ブランドサイト（提案事例）の設計 |
+| `image-guide-template.md` | 写真・イラストの生成ガイド（カット一覧＋プロンプト） |
+| `pr-video-template.md` | 30秒PR動画の台本・絵コンテ |
+| `sns-post-template.md` | SNS投稿（体験／Tips／問いかけ／お知らせ） |
+| `harukaze-card-template.md` | 名刺（91×55mm） |
 
 ## 使い方
-`templates/<name>/` を `projects/` 配下にコピー → 中身を差し替える。
+
+1. テンプレをコピー（または見ながら）
+2. 冒頭の **「変数」** の `〔 〕` を業種・店名などで埋める
+3. その内容を元に `projects/〔slug〕/` に実装、または素材を生成
 
 ## ルール
-雛形は「型」だけ。具体的な内容や実データは入れない（それは projects/ へ）。
 
-> ヒント: 既存の `projects/website/cafe-haruakari/` や `hanamusubi/` が事例ページの良い参考になります。汎用化したくなったらここに雛形として切り出しましょう。
+- 雛形は「型」だけ。具体データは入れない（それは `projects/` へ）
+- すべて ルート `README.md`・`brand/` のブランド基準・禁止事項に従う
+- 迷ったら「**静かで、やさしいか？**」
+
+> 参考になる完成形：`projects/website/cafe-haruakari/`（カフェ）・`hanamusubi/`（花屋）
