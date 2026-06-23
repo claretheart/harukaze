@@ -3,8 +3,13 @@
 harukaze の「憲法」。判断に迷ったとき、ここを基準にします。
 
 ## 中身
-- `BRAND.md` … ミッション・ブランドイメージ・禁止事項・ゴール
-- `DESIGN_SYSTEM.md` … カラー・フォント・デザイン方針
+- `brand-guidelines.md` … 実務の早見表＋索引（まずこれ）
+- `tone-of-voice.md` … 言葉づかい・文体・NG/OK例
+- `design-rules.md` … 見た目のルール（余白・角丸・アニメ・禁止）
+- `colors.md` … カラーパレットと使い方
+- `service-philosophy.md` … 提供姿勢（伴走者であること）
+- `BRAND.md` … ミッション・ブランドイメージ・禁止事項・ゴール（初期版）
+- `DESIGN_SYSTEM.md` … カラー・フォント・デザイン方針（初期版）
 - `docs/` … personas（ターゲット）／services（提供）／vision（想い）
 - `logo/` … harukaze ロゴ（円形）
 
