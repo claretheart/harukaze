@@ -23,7 +23,8 @@
 
     /* 名刺サイズ：91mm × 55mm */
     .card{
-      width:91mm; height:55mm; background:var(--bg);
+      width:91mm; height:55mm;
+      background:var(--bg) url("../assets/illustrations/card-bg.png") center/cover no-repeat;
       position:relative; overflow:hidden;
       box-shadow:0 8px 30px rgba(74,64,58,.16);
     }
@@ -34,9 +35,9 @@
 
     /* ===== 表 ===== */
     .front{ padding:7mm 7.5mm 6.5mm; display:flex; flex-direction:column; position:relative; z-index:1; }
-    .front .brandrow{ display:flex; align-items:center; gap:2.8mm; }
-    .front .logo{ width:9.5mm; height:9.5mm; border-radius:50%; object-fit:cover; }
-    .front .wordmark{ font-family:var(--maru); font-size:14px; font-weight:500; letter-spacing:.22em; }
+    .front .brandrow{ display:inline-block; }
+    .front .wordmark{ position:relative; font-family:var(--maru); font-size:18px; font-weight:700; letter-spacing:.24em; }
+    .front .wordmark::after{ content:""; display:block; width:11mm; height:1px; background:var(--sakura); margin-top:1.6mm; }
 
     .front .catch{
       margin-top:6mm; font-family:var(--mincho); font-weight:600;
@@ -84,11 +85,8 @@
 
   <!-- ===== 表面 ===== -->
   <div class="card front">
-    <span class="wash wash-s" style="width:34mm;height:34mm;top:-14mm;right:-12mm;opacity:.4;"></span>
-    <span class="wash wash-w" style="width:26mm;height:26mm;bottom:-13mm;left:-10mm;opacity:.28;"></span>
 
     <div class="brandrow">
-      <img class="logo" src="../assets/logo/harukaze-logo.png" alt="harukaze" />
       <span class="wordmark">harukaze</span>
     </div>
 
@@ -114,8 +112,6 @@
 
   <!-- ===== 裏面 ===== -->
   <div class="card back">
-    <span class="wash wash-s" style="width:30mm;height:30mm;top:-12mm;left:-10mm;opacity:.32;"></span>
-    <span class="wash wash-w" style="width:28mm;height:28mm;bottom:-12mm;right:-10mm;opacity:.26;"></span>
 
     <p class="b-catch">京都に春<span class="accent">風</span>を。</p>
     <p class="b-word">h a r u k a z e</p>
