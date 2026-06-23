@@ -797,6 +797,177 @@ a { color: inherit; text-decoration: none; }
 .proposal-card h3 { margin: 0 0 10px; font-size: 1.02rem; }
 .proposal-card p { margin: 0; color: var(--brown-soft); font-size: 0.9rem; line-height: 1.8; }
 
+/* ===========================================================
+   花結び 提案事例ページ（hanamusubi）
+   ベージュ / くすみピンク / 若草 / 木目
+   =========================================================== */
+.hana { --mincho:"Shippori Mincho", serif; }
+.hana .hana-title,
+.hana .hana-h2,
+.hana .hana-message { font-family: var(--mincho); }
+
+/* Hero */
+.hana-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 0;
+}
+@media (max-width: 760px) { .hana-hero { grid-template-columns: 1fr; } }
+.hana-hero-photo {
+  min-height: 360px;
+  background: linear-gradient(160deg, var(--sakura-soft) 0%, var(--wakakusa-soft) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hana-ph-emoji { font-size: 2.4rem; line-height: 1; }
+.hana-ph-note { font-size: 0.78rem; color: var(--brown-soft); }
+.hana-hero-body {
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (max-width: 760px) {
+  .hana-hero-body { padding: 44px 24px; align-items: center; text-align: center; }
+  .hana-hero-photo { min-height: 240px; }
+}
+.hana-kicker {
+  color: var(--wakakusa);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  margin: 0 0 16px;
+}
+.hana-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin: 0 0 18px;
+}
+@media (max-width: 600px) { .hana-title { font-size: 1.7rem; } }
+.hana-lead { font-size: 1.02rem; line-height: 2; color: var(--brown-soft); margin: 0 0 28px; }
+
+/* セクション共通 */
+.hana-section { padding: 72px 0; }
+@media (max-width: 600px) { .hana-section { padding: 52px 0; } }
+.hana-section-kicker {
+  text-align: center;
+  color: var(--wakakusa);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  margin: 0 0 14px;
+}
+.hana-h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 0 0 36px;
+}
+.hana-text { text-align: center; font-size: 1.02rem; line-height: 2.1; margin: 0 0 18px; text-wrap: balance; }
+.hana-text.soft { color: var(--brown-soft); }
+
+/* お店の想い */
+.hana-story { background: var(--bg); }
+.hana-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  margin: 0 0 30px;
+}
+@media (max-width: 600px) { .hana-message { font-size: 1.2rem; } }
+
+/* 商品紹介 */
+.hana-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+@media (max-width: 860px) { .hana-products { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .hana-products { grid-template-columns: 1fr; } }
+.hana-product {
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding-bottom: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hana-product:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(74,64,58,.1); }
+.hana-product-img {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  background: var(--sakura-soft);
+}
+.hana-product:nth-child(2n) .hana-product-img { background: var(--wakakusa-soft); }
+.hana-product h3 { margin: 20px 0 8px; font-size: 1.05rem; }
+.hana-product p { margin: 0; padding: 0 18px; font-size: 0.9rem; color: var(--brown-soft); line-height: 1.8; }
+
+/* ギャラリー */
+.hana-gallery-section { background: var(--bg); }
+.hana-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 760px) { .hana-gallery { grid-template-columns: repeat(2, 1fr); } }
+.hana-gitem {
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  border-radius: 18px;
+  background: var(--wakakusa-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hana-gitem:nth-child(2n) { background: var(--sakura-soft); }
+.hana-gitem figcaption { font-size: 0.82rem; color: var(--brown-soft); }
+
+/* 店舗情報 */
+.hana-info {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 12px 28px;
+  box-shadow: var(--shadow);
+}
+.hana-info-row {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px dashed rgba(74,64,58,.12);
+}
+.hana-info-row:last-child { border-bottom: none; }
+.hana-info-row dt { flex: 0 0 88px; font-weight: 700; color: var(--wakakusa); font-size: 0.92rem; }
+.hana-info-row dd { margin: 0; font-size: 0.98rem; }
+
+/* CTA */
+.hana-cta { background: var(--wakakusa-soft); text-align: center; }
+
+/* 花結びボタン */
+.btn-hana {
+  background: var(--sakura);
+  color: var(--brown);
+  box-shadow: 0 6px 18px rgba(231,201,201,.6);
+}
+.btn-hana:hover { transform: translateY(-2px); background: #e0bcbc; }
+
 /* ===== フッター ===== */
 .site-footer {
   text-align: center;
